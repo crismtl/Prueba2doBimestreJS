@@ -1,0 +1,41 @@
+<form class="form-horizontal" ng-submit="agregarUsuario()">
+  <fieldset>
+    <legend>Nuevo Usuario</legend>
+    <div class="form-group">
+      <label for="nombre" class="col-lg-2 control-label">Nombre</label>
+      <div class="col-lg-10">
+        <input ng-model="nuevoUsuario.nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="apellido" class="col-lg-2 control-label">Apellido</label>
+      <div class="col-lg-10">
+        <input ng-model="nuevoUsuario.apellido" type="text" class="form-control" id="apellido" placeholder="Apellido">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="edad" class="col-lg-2 control-label">Edad</label>
+      <div class="col-lg-10">
+        <input ng-model="nuevoUsuario.edad" type="number" class="form-control" id="edad" placeholder="Edad">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="correo" class="col-lg-2 control-label">Correo</label>
+      <div class="col-lg-10">
+        <input ng-model="nuevoUsuario.correo" type="email" class="form-control" id="correo" placeholder="Correo">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ciudad" class="col-lg-2 control-label">Ciudad</label>
+      <div class="col-lg-10">
+        <input ng-model="nuevoUsuario.ciudad" type="text" class="form-control" id="ciudad" placeholder="Ciudad">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
