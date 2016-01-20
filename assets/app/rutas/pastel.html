@@ -1,6 +1,85 @@
 <h1>Lista de Pasteles</h1>
-<div ng-repeat="pastel in pasteles">
+<div class="row">
   <div class="col-sm-4">
-    <h2>{{pastel.nombre}}</h2>
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>{{usuario.nombre}}
+          {{usuario.apellido}}</h2>
+        <p>{{usuario.edad}}
+          años</p>
+        <p>{{usuario.correo}}</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>{{usuario.ciudad}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <form class="form-horizontal" ng-submit="agregarPastel()">
+      <fieldset>
+        <legend>Nuevo Pastel</legend>
+        <div class="form-group">
+          <label for="nombre" class="col-lg-2 control-label">Nombre</label>
+          <div class="col-lg-10">
+            <input ng-model="nuevoPastel.nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tipo" class="col-lg-2 control-label">Tipo</label>
+          <div class="col-lg-10">
+            <select ng-model="nuevoPastel.tipo" class="form-control" id="tipo">
+              <option>hojaldre</option>
+              <option>azucarada</option>
+              <option>escaldadas</option>
+              <option>reposteria</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="preparacion" class="col-lg-2 control-label">Preparación</label>
+          <div class="col-lg-10">
+            <textarea ng-model="nuevoPastel.preparacion" class="form-control" rows="3" id="preparacion"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-10 col-lg-offset-2">
+            <button type="submit" class="btn btn-primary">Añadir Pastel</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div ng-repeat="pastel in pasteles">
+    <div class="col-sm-4">
+      <div class="col-sm-4">
+        <form class="form-horizontal" ng-submit="agregarIngrediente(pastel)">
+          <fieldset>
+            <div class="form-group">
+              <label for="nombre" class="col-lg-2 control-label">Ingrediente</label>
+              <div class="col-lg-10">
+                <input ng-model="nuevoIngrediente.nombre" type="text" class="form-control input-sm" id="nombre">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary btn-sm">Añadir</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        <ul>
+          <div ng-repeat="ingrediente in pastel.ingredientes">
+            <li>{{ingrediente.nombre}}</li>
+          </div>
+        </ul>
+      </div>
+      <div class="col-sm-8">
+        <h2>{{pastel.nombre}}</h2>
+        <p>{{pastel.preparacion}}</p>
+      </div>
+    </div>
   </div>
 </div>
